@@ -1,0 +1,31 @@
+{
+  "name": "mongoose-store",
+  "version": "0.0.1",
+  "description": "Mongoose session store for Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test --verbose"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "express",
+    "session"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:dreyacosta/mongoose-store.git"
+  },
+  "author": "@dreyacosta",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "mongoose": "^3.8.12"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "express-session": "^1.6.4",
+    "gulp": "^3.8.5",
+    "gulp-mocha": "^0.4.1"
+  }
+}
