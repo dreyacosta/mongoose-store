@@ -12,6 +12,6 @@ module.exports = (ttl) ->
       index: true
     createdAt:
       type: Date,
-      expires: ttl || 3600
+      expires: ttl
 
   mongoose.model 'Session', sessionSchema
