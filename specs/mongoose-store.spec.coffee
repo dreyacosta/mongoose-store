@@ -65,7 +65,7 @@ describe "Mongoose store", ->
     setTimeout ->
       mongooseStore.get data.sid, (err, res) ->
         expect(err).to.not.be.ok
-        expect(res).to.not.be.ok
+        expect(res).to.equal 1
         do done
     , 8000
 
@@ -73,7 +73,7 @@ describe "Mongoose store", ->
   it "should destroy a session", (done) ->
     mongooseStore.destroy data.sid, (err, res) ->
       expect(err).to.not.be.ok
-      expect(res).to.not.be.ok
+      expect(res).to.equal 0
       do done
 
 
@@ -84,7 +84,7 @@ describe "Mongoose store", ->
 
       setTimeout ->
         mongooseStore.get data.sid, (err, res) ->
-          expect(res).to.not.be.ok
+          expect(res).to.equal 1
           do done
       , 2000
 
