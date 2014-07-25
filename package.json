@@ -1,6 +1,6 @@
 {
   "name": "mongoose-store",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mongoose session store for Express",
   "main": "index.js",
   "scripts": {
