@@ -14,11 +14,20 @@ $ npm install mongoose-store --save
 
 ### Example
 ```js
+var express       = require('express');
 var session       = require('express-session');
 var MongooseStore = require('mongoose-store')(session);
+
+var app = express();
 
 var mongooseStore = new MongooseStore({
   url: 'mongodb://127.0.0.1:27017/testing',
   ttl: 600
 });
+
+app.use(session({
+  name: 'app.sid',
+  secret: 'yoursecret',
+  store: mongooseStore
+}));
 ```
