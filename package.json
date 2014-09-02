@@ -1,6 +1,6 @@
 {
   "name": "mongoose-store",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Mongoose session store for Express",
   "main": "index.js",
   "scripts": {
@@ -19,13 +19,13 @@
   "author": "@dreyacosta",
   "license": "MIT",
   "dependencies": {
-    "coffee-script": "^1.7.1",
-    "mongoose": "^3.8.12"
+    "coffee-script": "^1.8.0",
+    "mongoose": "^3.8.15"
   },
   "devDependencies": {
     "chai": "^1.9.1",
-    "express-session": "^1.6.4",
-    "gulp": "^3.8.5",
-    "gulp-mocha": "^0.4.1"
+    "express-session": "^1.7.6",
+    "gulp": "^3.8.7",
+    "gulp-mocha": "^1.0.0"
   }
 }
