@@ -31,3 +31,23 @@ app.use(session({
   store: mongooseStore
 }));
 ```
+
+#### With replica set:
+```js
+var express       = require('express');
+var session       = require('express-session');
+var MongooseStore = require('mongoose-store')(session);
+
+var app = express();
+
+var mongooseStore = new MongooseStore({
+  url: 'mongodb://ip1:27017/testing,mongodb://ip2:27017/testing,mongodb://ip3:27017/testing',
+  ttl: 600
+});
+
+app.use(session({
+  name: 'app.sid',
+  secret: 'yoursecret',
+  store: mongooseStore
+}));
+```
