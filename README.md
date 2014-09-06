@@ -9,7 +9,7 @@ $ npm install mongoose-store --save
 ## Usage
 
 ### Options
-  - `url`: The URL connection format `mongodb://user:pass@host:port/database/collection`.
+  - `url`: The URL connection format `mongodb://user:pass@host:port/database/collection`. Only need it if there is no connection yet.
   - `ttl` (seconds): How long the session persist on the database.
 
 ### Example
