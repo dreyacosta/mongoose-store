@@ -38,4 +38,4 @@ module.exports = (session) ->
 
 
     destroy: (sid, callback) ->
-      @SessionModel.remove sid: sid, callback
+      @SessionModel.remove(sid: sid).exec callback
