@@ -11,9 +11,9 @@ describe "Mongoose store", ->
     sid: '12ab34cd56ef'
     session:
       cookie:
-        originalMaxAge: new Date().getTime() + 2000
-        maxAge: new Date().getTime() + 2000
-        httpOnly: true
+        expires  : new Date().getTime() + 2000
+        maxAge   : 2000
+        httpOnly : true
       name: 'mongooseStore'
 
 
