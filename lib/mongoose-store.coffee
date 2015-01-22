@@ -14,7 +14,8 @@ module.exports = (session) ->
 
       @SessionModel.findOne query, (err, data) =>
         if err or not data then return callback err
-        if new Date().getTime() > data.session.cookie.maxAge
+        cookie = data.session.cookie
+        if cookie.expires? and new Date() > cookie.expires
           return @destroy data.sid, callback
         callback null, data.session
 
@@ -23,14 +24,11 @@ module.exports = (session) ->
       unless session
         @destroy sid, callback
 
-      if cookie = session.cookie
-        expires = cookie.expires if cookie.expires
-        expires = new Date(cookie.maxAge) if cookie.maxAge
+      data = sid: sid, session: session
 
-      data =
-        sid: sid
-        session: session
-        expires: expires
+      if cookie = session.cookie
+        data.expires = cookie._expires if cookie._expires
+        data.expires = cookie.expires if cookie.expires
 
       if @options.ttl then data.createdAt = new Date()
 
