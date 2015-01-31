@@ -6,7 +6,7 @@ module.exports = (session) ->
   class MongooseStore extends session.Store
     constructor: (@options = {}) ->
       mongoose.connect @options.url if mongoose.connection.readyState is 0
-      @SessionModel = require('./model-session') options.ttl
+      @SessionModel = require('./model-session') @options.ttl
 
 
     get: (sid, callback) ->
